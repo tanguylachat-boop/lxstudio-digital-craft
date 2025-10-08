@@ -16,10 +16,7 @@ import { toast } from "sonner";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
-    company: "",
     email: "",
-    projectType: "",
-    budget: "",
     message: "",
   });
 
@@ -39,10 +36,7 @@ const Contact = () => {
     // Reset form
     setFormData({
       name: "",
-      company: "",
       email: "",
-      projectType: "",
-      budget: "",
       message: "",
     });
   };
@@ -65,7 +59,7 @@ const Contact = () => {
             Discutons de votre projet
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Nous accompagnons les marques ambitieuses vers l'excellence digitale
+            Remplissez le formulaire ci-dessous, et nous reviendrons vers vous dans les 24h.
           </p>
         </div>
       </section>
@@ -91,18 +85,6 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="company">Entreprise</Label>
-                  <Input
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    placeholder="Votre entreprise"
-                    className="mt-2"
-                  />
-                </div>
-
-                <div>
                   <Label htmlFor="email">Email *</Label>
                   <Input
                     id="email"
@@ -114,47 +96,6 @@ const Contact = () => {
                     required
                     className="mt-2"
                   />
-                </div>
-
-                <div>
-                  <Label htmlFor="projectType">Type de projet</Label>
-                  <Select
-                    value={formData.projectType}
-                    onValueChange={(value) =>
-                      setFormData({ ...formData, projectType: value })
-                    }
-                  >
-                    <SelectTrigger className="mt-2">
-                      <SelectValue placeholder="Sélectionnez un type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="site">Site vitrine</SelectItem>
-                      <SelectItem value="ecommerce">E-commerce</SelectItem>
-                      <SelectItem value="startup">Start-up / SaaS</SelectItem>
-                      <SelectItem value="branding">Branding</SelectItem>
-                      <SelectItem value="other">Autre</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label htmlFor="budget">Budget</Label>
-                  <Select
-                    value={formData.budget}
-                    onValueChange={(value) =>
-                      setFormData({ ...formData, budget: value })
-                    }
-                  >
-                    <SelectTrigger className="mt-2">
-                      <SelectValue placeholder="Sélectionnez un budget" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="less1000">Moins de CHF 1'000</SelectItem>
-                      <SelectItem value="1000-3000">CHF 1'000 - 3'000</SelectItem>
-                      <SelectItem value="3000-8000">CHF 3'000 - 8'000</SelectItem>
-                      <SelectItem value="8000plus">Plus de CHF 8'000</SelectItem>
-                    </SelectContent>
-                  </Select>
                 </div>
 
                 <div>

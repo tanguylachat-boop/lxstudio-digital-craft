@@ -5,41 +5,44 @@ import ServiceCard from "@/components/ServiceCard";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Home = () => {
-  const services = [
+  const expertiseDomains = [
     {
       icon: Sparkles,
-      title: "Sites web de luxe",
-      description: "Design immersif, raffiné et impactant pour les marques d'exception.",
+      title: "Luxe & Mode",
+      description: "Identités digitales élégantes et immersives pour maisons de prestige, bijouteries et marques horlogères.",
     },
     {
       icon: TrendingUp,
-      title: "E-commerce Shopify",
-      description: "Boutiques haut de gamme conçues pour convertir et séduire.",
+      title: "Sport & Performance",
+      description: "Sites et applications pour marques sportives haut de gamme.",
     },
     {
       icon: Palette,
-      title: "SaaS & Start-ups",
-      description: "Landing pages performantes pour lever des fonds et convaincre.",
+      title: "E-commerce Premium",
+      description: "Boutiques en ligne Shopify et Framer optimisées pour convertir sans sacrifier l'esthétique.",
     },
     {
       icon: Award,
-      title: "Branding & Identité",
-      description: "Logos et chartes visuelles sur mesure, pensés pour durer.",
+      title: "Start-ups & IA",
+      description: "Landing pages et identités digitales pour start-ups technologiques et projets IA suisses.",
     },
   ];
 
-  const whyChoose = [
+  const approachPillars = [
     {
-      title: "Qualité suisse",
-      description: "Précision, fiabilité et rigueur dans chaque projet.",
+      number: "01",
+      title: "Analyse & stratégie",
+      description: "Comprendre la marque, son audience et ses objectifs.",
     },
     {
-      title: "Équipe internationale",
-      description: "Talents créatifs sélectionnés à travers le monde.",
+      number: "02",
+      title: "Design & émotion",
+      description: "Concevoir une identité digitale qui suscite la confiance et l'admiration.",
     },
     {
-      title: "Résultats mesurables",
-      description: "Design au service de la croissance et du ROI.",
+      number: "03",
+      title: "Performance & pérennité",
+      description: "Livrer un site rapide, mesurable et durable dans le temps.",
     },
   ];
 
@@ -69,75 +72,172 @@ const Home = () => {
                 <ArrowRight className="ml-2" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="xl">
-              <Link to="/portfolio">Voir nos projets</Link>
+            <Button 
+              asChild 
+              variant="outline" 
+              size="xl"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('notre-approche')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              <a href="#notre-approche">Notre approche</a>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Notre Approche Section */}
+      <section id="notre-approche" className="py-24 bg-card relative overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2000')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-16 animate-slide-up">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Une approche fondée sur la précision et l'émotion
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Nous allions l'élégance du design suisse à une stratégie digitale mesurable.
+            </p>
+            <div className="text-left space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Chez LX Studio, chaque projet naît d'une vision claire : créer des expériences digitales 
+                qui marquent par leur beauté, leur efficacité et leur sens.
+              </p>
+              <p className="font-semibold text-foreground">
+                Notre démarche s'articule autour de trois piliers :
+              </p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {approachPillars.map((pillar, index) => (
+              <div
+                key={index}
+                className="bg-background/80 backdrop-blur-sm border border-border rounded-xl p-8 hover-lift"
+              >
+                <div className="text-5xl font-bold text-gradient-gold mb-4">
+                  {pillar.number}
+                </div>
+                <h3 className="text-2xl font-semibold text-foreground mb-3">
+                  {pillar.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {pillar.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="max-w-4xl mx-auto text-left space-y-6 text-muted-foreground leading-relaxed">
+            <p>
+              Nos processus sont rigoureux, nos outils de pointe, et notre exigence sans compromis.
+            </p>
+            <p className="text-xl font-semibold text-gradient-gold text-center">
+              🎯 Chaque pixel compte. Chaque interaction raconte une histoire.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Domaines d'Expertise Section */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Nos expertises
+              Nos domaines d'excellence
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Des solutions digitales pensées pour les marques ambitieuses
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              LX Studio accompagne des marques exigeantes dans quatre univers où le design et la performance se rencontrent.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {expertiseDomains.map((domain, index) => (
               <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <ServiceCard {...service} />
+                <ServiceCard {...domain} />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-24 bg-card">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Pourquoi choisir LX Studio
+      {/* Portfolio Exclusif Section */}
+      <section className="py-24 bg-gradient-to-br from-card via-background to-card relative overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: "radial-gradient(circle at 50% 50%, hsl(var(--gold)) 0%, transparent 50%)",
+          }}
+        />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-block px-6 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
+              <span className="text-sm font-semibold text-primary">Bientôt disponible</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Nos réalisations arrivent bientôt
             </h2>
-            <p className="text-xl text-muted-foreground">
-              L'excellence suisse rencontre la créativité mondiale
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              LX Studio prépare actuellement une sélection de projets sur mesure, conçus pour refléter 
+              l'alliance du design suisse et de la performance digitale.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {whyChoose.map((item, index) => (
-              <div
-                key={index}
-                className="text-center p-8 bg-background border border-border rounded-xl hover-lift"
-              >
-                <h3 className="text-2xl font-semibold text-foreground mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {item.description}
+            <div className="bg-card/50 backdrop-blur-sm border border-border rounded-xl p-8 mb-8 text-left space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                Nous collaborons avec des marques ambitieuses issues du luxe, du sport et de la technologie 
+                pour créer des expériences digitales d'exception.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Chaque projet que nous acceptons est traité comme une œuvre unique, pensée dans les moindres 
+                détails — du concept à l'exécution.
+              </p>
+              <div className="pt-4 space-y-2">
+                <p className="text-lg font-semibold text-foreground">
+                  🕰️ Les premières réalisations exclusives seront dévoilées prochainement.
+                </p>
+                <p className="text-lg font-semibold text-gradient-gold">
+                  💌 Vous souhaitez faire partie de cette première sélection ?
                 </p>
               </div>
-            ))}
+            </div>
+            <Button asChild variant="hero" size="xl">
+              <Link to="/contact">
+                Réserver un appel découverte
+                <ArrowRight className="ml-2" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-primary/10 to-secondary/10">
-        <div className="container mx-auto px-6 text-center">
+      <section className="py-24 bg-gradient-to-br from-primary/10 to-secondary/10 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-30"
+          style={{
+            background: "radial-gradient(circle at 30% 50%, hsl(var(--gold) / 0.2) 0%, transparent 50%), radial-gradient(circle at 70% 50%, hsl(var(--electric-blue) / 0.2) 0%, transparent 50%)",
+          }}
+        />
+        <div className="container mx-auto px-6 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Prêt à sublimer votre image en ligne ?
+            Prêt à élever votre image digitale ?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Discutons de votre projet et créons ensemble quelque chose d'extraordinaire
+            Réservez un appel gratuit et découvrons ensemble votre potentiel.
           </p>
-          <Button asChild variant="hero" size="xl">
+          <Button 
+            asChild 
+            variant="hero" 
+            size="xl"
+            className="hover:shadow-[0_0_40px_hsl(var(--gold)/0.5)] transition-all duration-300"
+          >
             <Link to="/contact">
-              Réserver un appel gratuit
+              Réserver un appel maintenant
               <ArrowRight className="ml-2" />
             </Link>
           </Button>
