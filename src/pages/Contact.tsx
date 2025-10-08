@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,25 +21,37 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Veuillez remplir tous les champs obligatoires");
       return;
     }
 
-    // Here you would typically send the data to your backend
-    console.log("Form submitted:", formData);
-    toast.success("Message envoyé avec succès ! Nous vous répondrons rapidement.");
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        }
+      });
+
+      if (error) throw error;
+
+      console.log("Email sent successfully:", data);
+      toast.success("Message envoyé avec succès ! Nous vous répondrons rapidement.");
+      
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast.error("Erreur lors de l'envoi du message");
+    }
   };
 
   const handleChange = (
