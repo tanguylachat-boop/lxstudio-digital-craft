@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Linkedin, Music } from "lucide-react";
+import logoText from "@/assets/logo-text.png";
 
 const Footer = () => {
   const navLinks = [
@@ -16,9 +17,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <span className="text-2xl font-bold text-gradient-gold">LX</span>
-              <span className="text-xl font-light text-foreground">Studio</span>
+            <div className="mb-4">
+              <img src={logoText} alt="LX Studio" className="h-12 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground mb-4">
               Excellence Digitale Suisse
