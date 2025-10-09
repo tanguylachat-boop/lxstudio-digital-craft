@@ -27,14 +27,14 @@ const handler = async (req: Request): Promise<Response> => {
     const emailResponse = await resend.emails.send({
       from: "LX Studio <contact@lxstudio.ch>",
       to: "contact@lxstudio.ch",
-      subject: "Nous avons bien reçu votre message !",
+      subject: `Nouveau message de ${name} via le site LX Studio`,
       html: `
-        <h1>Merci de nous avoir contactés, ${name} !</h1>
-        <p>Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.</p>
-        <p><strong>Votre message :</strong></p>
-        <p>${message}</p>
+        <h1>Message reçu depuis le site LX Studio</h1>
+        <p><strong>Nom :</strong> ${name}</p>
+        <p><strong>Email :</strong> ${email}</p>
+        <p><strong>Message :</strong><br>${message}</p>
         <br>
-        <p>Cordialement,<br>L'équipe Alqai</p>
+        <p style="font-size:12px;color:#555">Envoyé automatiquement depuis le formulaire de lxstudio.ch.</p>
       `,
     });
 
