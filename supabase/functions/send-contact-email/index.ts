@@ -5,8 +5,7 @@ const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
 interface ContactEmailRequest {
@@ -26,8 +25,8 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Sending contact email for:", { name, email });
 
     const emailResponse = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
-      to: [email],
+      from: "LX Studio <contact@lxstudio.ch>",
+      to: "contact@lxstudio.ch",
       subject: "Nous avons bien reçu votre message !",
       html: `
         <h1>Merci de nous avoir contactés, ${name} !</h1>
@@ -50,13 +49,10 @@ const handler = async (req: Request): Promise<Response> => {
     });
   } catch (error: any) {
     console.error("Error in send-contact-email function:", error);
-    return new Response(
-      JSON.stringify({ error: error.message }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json", ...corsHeaders },
-      }
-    );
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json", ...corsHeaders },
+    });
   }
 };
 
