@@ -6,8 +6,9 @@ const Footer = () => {
   const navLinks = [
     { label: "Accueil", path: "/" },
     { label: "Services", path: "/services" },
+    { label: "Automatisations IA", path: "/automatisations-ia" },
+    { label: "SEO & GEO-SEO", path: "/seo-geo" },
     { label: "Portfolio", path: "/portfolio" },
-    { label: "À propos", path: "/about" },
     { label: "Contact", path: "/contact" },
   ];
 
@@ -91,7 +92,7 @@ const Footer = () => {
                   +41 78 703 88 00
                 </a>
               </li>
-              <li>Bassecourt, Suisse</li>
+              <li>LX Studio — Bassecourt (Jura, CH)</li>
             </ul>
           </div>
         </div>
