@@ -97,10 +97,26 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            © 2025 LX Studio — Excellence Digitale Suisse.
-          </p>
+        <div className="border-t border-border pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-muted-foreground">
+              © 2025 LX Studio — Excellence Digitale Suisse.
+            </p>
+            <div className="flex gap-6 text-sm">
+              <Link
+                to="/privacy"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                Politique de Confidentialité
+              </Link>
+              <Link
+                to="/terms"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                Conditions d'Utilisation
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
