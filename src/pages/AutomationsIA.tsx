@@ -1,4 +1,4 @@
-import { Bot, Clock, Zap, Shield, TrendingUp, Calendar, MessageSquare, FileText, CheckCircle2 } from "lucide-react";
+import { Bot, Clock, Zap, Shield, TrendingUp, Calendar, MessageSquare, FileText, CheckCircle2, Briefcase, Home, UtensilsCrossed, ShoppingCart, Stethoscope, Scale, Dumbbell, Megaphone, Calculator, Wrench, Scissors, Hammer, GraduationCap, Sparkles, Truck, Rocket, Factory, UserCheck, PartyPopper, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -81,6 +81,29 @@ const AutomationsIA = () => {
       name: "Entreprise",
       description: "Solution sur mesure avec plusieurs agents spécialisés, intégrations illimitées, SLA garanti et support prioritaire.",
     },
+  ];
+
+  const metiers = [
+    { icon: Briefcase, name: "Assistant administratif", path: "/automatisations-ia/assistant-administratif" },
+    { icon: Home, name: "Agence immobilière", path: "/automatisations-ia/agence-immobiliere" },
+    { icon: UtensilsCrossed, name: "Restaurant / Hôtel", path: "/automatisations-ia/restaurant" },
+    { icon: ShoppingCart, name: "E-commerce", path: "/automatisations-ia/ecommerce" },
+    { icon: Stethoscope, name: "Cabinet médical", path: "/automatisations-ia/cabinet-medical" },
+    { icon: Scale, name: "Cabinet d'avocat", path: "/automatisations-ia/cabinet-avocat" },
+    { icon: Dumbbell, name: "Coach sportif", path: "/automatisations-ia/coach-sportif" },
+    { icon: Megaphone, name: "Agence marketing", path: "/automatisations-ia/agence-marketing" },
+    { icon: Calculator, name: "Comptable", path: "/automatisations-ia/comptable" },
+    { icon: Wrench, name: "Garage", path: "/automatisations-ia/garage" },
+    { icon: Scissors, name: "Salon de beauté", path: "/automatisations-ia/salon-beaute" },
+    { icon: Hammer, name: "Artisan", path: "/automatisations-ia/artisan" },
+    { icon: GraduationCap, name: "Centre de formation", path: "/automatisations-ia/centre-formation" },
+    { icon: Sparkles, name: "Agence de nettoyage", path: "/automatisations-ia/agence-nettoyage" },
+    { icon: Truck, name: "Transport", path: "/automatisations-ia/transport" },
+    { icon: Rocket, name: "Start-up", path: "/automatisations-ia/startup" },
+    { icon: Factory, name: "Industrie", path: "/automatisations-ia/industrie" },
+    { icon: UserCheck, name: "Ressources humaines", path: "/automatisations-ia/ressources-humaines" },
+    { icon: PartyPopper, name: "Événementiel", path: "/automatisations-ia/evenementiel" },
+    { icon: Building2, name: "Administration publique", path: "/automatisations-ia/administration" },
   ];
 
   return (
@@ -211,8 +234,38 @@ const AutomationsIA = () => {
         </div>
       </section>
 
-      {/* Results */}
+      {/* Métiers Section */}
       <section className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Automatisations par métier
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Découvrez comment nos agents IA transforment votre secteur d'activité
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {metiers.map((metier, index) => (
+              <Link key={index} to={metier.path}>
+                <Card className="h-full hover:shadow-xl hover:border-primary transition-all duration-300 cursor-pointer group">
+                  <CardContent className="pt-6 pb-6 text-center">
+                    <div className="bg-primary/10 group-hover:bg-primary/20 w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4 transition-colors">
+                      <metier.icon className="w-8 h-8 text-primary" />
+                    </div>
+                    <h3 className="text-foreground font-semibold group-hover:text-primary transition-colors">
+                      {metier.name}
+                    </h3>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Results */}
+      <section className="py-20 bg-card">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
@@ -231,7 +284,7 @@ const AutomationsIA = () => {
       </section>
 
       {/* Guarantees */}
-      <section className="py-20 bg-card">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">
@@ -250,7 +303,7 @@ const AutomationsIA = () => {
       </section>
 
       {/* Offers */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-card">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
