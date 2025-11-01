@@ -8,7 +8,7 @@ const Blog = () => {
   const articles = [
     {
       title: "Comment booster la visibilité locale de votre entreprise dans le Jura",
-      slug: "visibilite-locale-jura",
+      slug: "visibilite-jura",
       excerpt: "Découvrez les meilleures stratégies de référencement local pour dominer les recherches Google dans le canton du Jura et attirer plus de clients régionaux.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000",
       date: "15 janvier 2025",
@@ -17,7 +17,7 @@ const Blog = () => {
     },
     {
       title: "Les avantages de l'automatisation IA pour les PME suisses",
-      slug: "automatisation-ia-pme-suisse",
+      slug: "automatisations-ia-suisse",
       excerpt: "L'intelligence artificielle n'est plus réservée aux grandes entreprises. Découvrez comment les PME suisses peuvent automatiser leurs processus et gagner en productivité.",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000",
       date: "10 janvier 2025",

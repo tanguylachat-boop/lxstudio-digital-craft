@@ -12,6 +12,9 @@ import Services from "./pages/Services";
 import AutomationsIA from "./pages/AutomationsIA";
 import SeoGeo from "./pages/SeoGeo";
 import Blog from "./pages/Blog";
+import VisibiliteJura from "./pages/blog/VisibiliteJura";
+import AutomatisationsIASuisse from "./pages/blog/AutomatisationsIASuisse";
+import ErreursSEO2025 from "./pages/blog/ErreursSEO2025";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -88,6 +91,9 @@ const App = () => (
               <Route path="/automatisations-ia/administration" element={<Administration />} />
               <Route path="/seo-geo" element={<SeoGeo />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/visibilite-jura" element={<VisibiliteJura />} />
+              <Route path="/blog/automatisations-ia-suisse" element={<AutomatisationsIASuisse />} />
+              <Route path="/blog/erreurs-seo-2025" element={<ErreursSEO2025 />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
