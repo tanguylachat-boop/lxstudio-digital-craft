@@ -1,4 +1,5 @@
 import { Search, MapPin, TrendingUp, FileText, BarChart3, Star } from "lucide-react";
+import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useState } from "react";
@@ -65,6 +66,13 @@ const SeoGeo = () => {
 
   return (
     <div className="min-h-screen pt-24">
+      <Helmet>
+        <title>SEO Jura & Suisse romande – LX Studio</title>
+        <meta name="description" content="Référencement local SEO dans le Jura et en Suisse romande. Augmentez votre visibilité Google et attirez plus de clients avec LX Studio." />
+        <meta property="og:title" content="SEO & GEO-SEO Jura Suisse – LX Studio" />
+        <meta property="og:description" content="Expert en référencement local pour entreprises suisses. Audit SEO gratuit, optimisation Google et stratégie digitale." />
+      </Helmet>
+
       {/* Sticky CTA */}
       <div className="fixed top-20 right-6 z-40 hidden lg:flex flex-col gap-3">
         <Button onClick={() => setIsModalOpen(true)} variant="hero" size="lg">
@@ -80,11 +88,11 @@ const SeoGeo = () => {
               <Search className="w-4 h-4" />
               <span className="text-sm font-semibold">SEO & GEO-SEO</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              SEO & GEO-SEO pour dominer votre zone
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 animate-glow">
+              Boostez votre visibilité locale
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Référencement naturel + géolocalisé pour apparaître devant vos clients à Delémont, Bienne, Bâle, Lausanne, Genève et partout en Suisse romande.
+              Référencement SEO expert dans le Jura et en Suisse romande pour attirer vos clients régionaux
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button onClick={() => setIsModalOpen(true)} variant="hero" size="xl">

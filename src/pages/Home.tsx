@@ -1,5 +1,6 @@
-import { ArrowRight, Sparkles, Palette, TrendingUp, Award } from "lucide-react";
+import { ArrowRight, Sparkles, Palette, TrendingUp, Award, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import ServiceCard from "@/components/ServiceCard";
 import ParticlesBackground from "@/components/ParticlesBackground";
@@ -49,6 +50,15 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>LX Studio – Agence web & SEO dans le Jura (Suisse romande)</title>
+        <meta name="description" content="LX Studio, agence digitale suisse basée à Bassecourt, experte en création de sites haut de gamme, SEO local et automatisations IA pour entreprises." />
+        <meta property="og:title" content="LX Studio – Agence web & SEO Jura Suisse" />
+        <meta property="og:description" content="Agence digitale suisse spécialisée en création de sites haut de gamme, SEO local et automatisations IA." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://lxstudio.ch" />
+      </Helmet>
+      
       {/* Hero Section */}
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
@@ -61,8 +71,8 @@ const Home = () => {
         <ParticlesBackground />
         <div className="container mx-auto px-6 text-center z-10 animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight animate-glow">
-            Nous créons des expériences digitales
-            <span className="text-gradient-gold block mt-2">d'exception</span>
+            Agence web et digitale d'excellence
+            <span className="text-gradient-gold block mt-2">en Suisse romande</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
             La précision suisse au service du design, de la performance et de l'émotion
@@ -276,6 +286,59 @@ const Home = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Zones d'intervention Section */}
+      <section className="py-24 bg-card relative overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: "radial-gradient(circle at 50% 50%, hsl(var(--gold)) 0%, transparent 50%)",
+          }}
+        />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16 animate-slide-up">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Nos zones d'intervention en Suisse romande
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+              Basés à Bassecourt dans le Jura, nous accompagnons les entreprises de toute la Suisse romande
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
+            {[
+              { name: "Delémont", icon: MapPin },
+              { name: "Porrentruy", icon: MapPin },
+              { name: "Bienne", icon: MapPin },
+              { name: "Neuchâtel", icon: MapPin },
+              { name: "Lausanne", icon: MapPin },
+            ].map((zone, index) => (
+              <div
+                key={index}
+                className="bg-background/80 backdrop-blur-sm border border-border rounded-xl p-6 hover-lift text-center"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <zone.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+                <p className="font-semibold text-foreground">{zone.name}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Google Maps */}
+          <div className="max-w-4xl mx-auto rounded-xl overflow-hidden border border-border shadow-luxury">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21719.845844634547!2d7.227741!3d47.343583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4791e5e5e5e5e5e5%3A0x5e5e5e5e5e5e5e5!2sBassecourt%2C%20Switzerland!5e0!3m2!1sen!2sus!4v1234567890"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="LX Studio - Bassecourt, Jura, Suisse"
+            />
           </div>
         </div>
       </section>

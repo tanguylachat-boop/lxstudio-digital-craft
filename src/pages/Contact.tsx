@@ -190,6 +190,20 @@ const Contact = () => {
                 </Button>
               </div>
             </div>
+
+            {/* Google Maps */}
+            <div className="mt-16 rounded-xl overflow-hidden border border-border shadow-luxury">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21719.845844634547!2d7.227741!3d47.343583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4791e5e5e5e5e5e5%3A0x5e5e5e5e5e5e5e5!2sBassecourt%2C%20Switzerland!5e0!3m2!1sen!2sus!4v1234567890"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="LX Studio - Bassecourt, Jura, Suisse"
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import { Bot, Clock, Zap, Shield, TrendingUp, Calendar, MessageSquare, FileText, CheckCircle2, Briefcase, Home, UtensilsCrossed, ShoppingCart, Stethoscope, Scale, Dumbbell, Megaphone, Calculator, Wrench, Scissors, Hammer, GraduationCap, Sparkles, Truck, Rocket, Factory, UserCheck, PartyPopper, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useState } from "react";
@@ -108,6 +109,13 @@ const AutomationsIA = () => {
 
   return (
     <div className="min-h-screen pt-24">
+      <Helmet>
+        <title>Automatisations IA – LX Studio Suisse</title>
+        <meta name="description" content="Optimisez votre entreprise suisse avec des automatisations IA intelligentes. Gestion client, devis automatiques et réseaux sociaux par LX Studio." />
+        <meta property="og:title" content="Automatisations IA pour entreprises suisses – LX Studio" />
+        <meta property="og:description" content="Solutions d'automatisation intelligentes pour PME : réponses clients, devis instantanés, gestion automatisée." />
+      </Helmet>
+
       {/* Sticky CTA */}
       <div className="fixed top-20 right-6 z-40 hidden lg:flex flex-col gap-3">
         <Button onClick={() => setIsModalOpen(true)} variant="hero" size="lg">
@@ -123,11 +131,11 @@ const AutomationsIA = () => {
               <Bot className="w-4 h-4" />
               <span className="text-sm font-semibold">Automatisations IA</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              Automatisations IA (Agents IA) pour entreprises suisses
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 animate-glow">
+              Optimisez votre entreprise grâce à l'intelligence artificielle
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Des agents IA sur mesure qui répondent, qualifient et convertissent 24/7 — pour votre marketing, votre administratif et votre accueil téléphonique.
+              LX Studio conçoit des automatisations intelligentes pour vos processus internes : gestion client, devis, e-mails, réseaux sociaux, etc.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button onClick={() => setIsModalOpen(true)} variant="hero" size="xl">

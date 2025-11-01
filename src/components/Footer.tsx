@@ -9,6 +9,7 @@ const Footer = () => {
     { label: "Automatisations IA", path: "/automatisations-ia" },
     { label: "SEO & GEO-SEO", path: "/seo-geo" },
     { label: "Portfolio", path: "/portfolio" },
+    { label: "Blog", path: "/blog" },
     { label: "Contact", path: "/contact" },
   ];
 

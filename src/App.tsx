@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import AutomationsIA from "./pages/AutomationsIA";
 import SeoGeo from "./pages/SeoGeo";
+import Blog from "./pages/Blog";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -86,6 +87,7 @@ const App = () => (
               <Route path="/automatisations-ia/evenementiel" element={<Evenementiel />} />
               <Route path="/automatisations-ia/administration" element={<Administration />} />
               <Route path="/seo-geo" element={<SeoGeo />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
