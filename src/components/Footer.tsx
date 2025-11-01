@@ -13,15 +13,18 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card border-t border-border mt-20">
-      <div className="container mx-auto px-6 py-12">
+    <footer className="bg-card border-t border-border mt-20 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-5" style={{
+        backgroundImage: "radial-gradient(circle at 50% 0%, hsl(var(--gold)) 0%, transparent 50%)",
+      }} />
+      <div className="container mx-auto px-6 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <div className="mb-4">
-              <img src={logoText} alt="LX Studio" className="h-12 w-auto" />
+            <div className="mb-4 group">
+              <img src={logoText} alt="LX Studio" className="h-12 w-auto transition-all duration-300 group-hover:scale-105 hover-glow" />
             </div>
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-sm text-gradient-gold font-semibold mb-4">
               Excellence Digitale Suisse
             </p>
             <div className="flex space-x-4">
@@ -29,7 +32,7 @@ const Footer = () => {
                 href="https://instagram.com/lxstudio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover-glow"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
@@ -38,7 +41,7 @@ const Footer = () => {
                 href="https://linkedin.com/company/lxstudio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover-glow"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
@@ -47,7 +50,7 @@ const Footer = () => {
                 href="https://tiktok.com/@lxstudio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover-glow"
                 aria-label="TikTok"
               >
                 <Music size={20} />

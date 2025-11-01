@@ -9,41 +9,41 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
+    --foreground: 0 0% 97%;
 
     --card: 0 0% 7%;
-    --card-foreground: 0 0% 98%;
+    --card-foreground: 0 0% 97%;
 
     --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 98%;
+    --popover-foreground: 0 0% 97%;
 
-    --primary: 45 75% 55%;
+    --primary: 38 54% 54%;
     --primary-foreground: 0 0% 4%;
 
     --secondary: 222 89% 63%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary-foreground: 0 0% 97%;
 
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 45 75% 55%;
+    --accent: 38 54% 54%;
     --accent-foreground: 0 0% 4%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 97%;
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 45 75% 55%;
+    --ring: 38 54% 54%;
 
     --radius: 0.75rem;
 
     /* Custom luxury colors */
-    --gold: 45 75% 55%;
-    --gold-light: 45 75% 70%;
+    --gold: 38 54% 54%;
+    --gold-light: 38 54% 70%;
     --electric-blue: 222 89% 63%;
     --deep-black: 0 0% 4%;
-    --pure-white: 0 0% 98%;
+    --pure-white: 0 0% 97%;
     
     /* Gradients */
     --gradient-gold: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 100%);
@@ -65,11 +65,11 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
   }
 }
 
@@ -79,7 +79,7 @@ All colors MUST be HSL.
   }
   
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_hsl(var(--gold)/0.3)];
+    @apply transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_70px_-15px_hsl(var(--gold)/0.4)] hover:scale-[1.02];
   }
   
   .animate-fade-in {
@@ -88,6 +88,14 @@ All colors MUST be HSL.
   
   .animate-slide-up {
     animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--gold)/0.5)];
   }
 }
 
@@ -108,5 +116,14 @@ All colors MUST be HSL.
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px hsl(var(--gold) / 0.3), 0 0 20px hsl(var(--gold) / 0.2);
+  }
+  to {
+    text-shadow: 0 0 20px hsl(var(--gold) / 0.5), 0 0 30px hsl(var(--gold) / 0.3), 0 0 40px hsl(var(--gold) / 0.2);
   }
 }

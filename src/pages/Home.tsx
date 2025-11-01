@@ -2,6 +2,7 @@ import { ArrowRight, Sparkles, Palette, TrendingUp, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ServiceCard from "@/components/ServiceCard";
+import ParticlesBackground from "@/components/ParticlesBackground";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Home = () => {
@@ -57,8 +58,9 @@ const Home = () => {
           backgroundPosition: "center",
         }}
       >
+        <ParticlesBackground />
         <div className="container mx-auto px-6 text-center z-10 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight animate-glow">
             Nous créons des expériences digitales
             <span className="text-gradient-gold block mt-2">d'exception</span>
           </h1>
@@ -66,7 +68,7 @@ const Home = () => {
             La précision suisse au service du design, de la performance et de l'émotion
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button asChild variant="hero" size="xl">
+            <Button asChild variant="hero" size="xl" className="hover-glow">
               <Link to="/contact">
                 Demander un devis
                 <ArrowRight className="ml-2" />
@@ -80,6 +82,7 @@ const Home = () => {
                 e.preventDefault();
                 document.getElementById('notre-approche')?.scrollIntoView({ behavior: 'smooth' });
               }}
+              className="border-primary/50 hover:border-primary hover-glow"
             >
               <a href="#notre-approche">Notre approche</a>
             </Button>
@@ -211,6 +214,68 @@ const Home = () => {
                 <ArrowRight className="ml-2" />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-card relative overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: "radial-gradient(circle at 50% 50%, hsl(var(--gold)) 0%, transparent 50%)",
+          }}
+        />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16 animate-slide-up">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Ce que disent nos clients
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              La confiance de nos clients est notre plus belle récompense
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                name: "Maison Duret",
+                location: "Genève",
+                text: "Service exceptionnel. LX Studio a créé un site au design luxueux et une vitesse incroyable.",
+                rating: 5
+              },
+              {
+                name: "Bijouterie Alpina",
+                location: "Lausanne",
+                text: "Résultats visibles dès le premier mois sur Google. Une équipe à l'écoute.",
+                rating: 5
+              },
+              {
+                name: "Hôtel Le Grand Jura",
+                location: "Jura",
+                text: "Professionnalisme, réactivité et design d'exception.",
+                rating: 5
+              }
+            ].map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-background/80 backdrop-blur-sm border border-border rounded-xl p-8 hover-lift"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Sparkles key={i} className="w-5 h-5 text-primary fill-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-6 leading-relaxed italic">
+                  "{testimonial.text}"
+                </p>
+                <div className="border-t border-border pt-4">
+                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -20,11 +20,11 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-lg shadow-black/5">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center">
-            <img src={logoText} alt="LX Studio" className="h-10 w-auto" />
+          <Link to="/" className="flex items-center group">
+            <img src={logoText} alt="LX Studio" className="h-10 w-auto transition-all duration-300 group-hover:scale-105 hover-glow" />
           </Link>
 
           {/* Desktop Navigation */}
