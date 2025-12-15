@@ -1,312 +1,449 @@
-import { ArrowRight, Sparkles, Palette, TrendingUp, Award, MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import ServiceCard from "@/components/ServiceCard";
 import ParticlesBackground from "@/components/ParticlesBackground";
-import heroBackground from "@/assets/hero-background.jpg";
+import { 
+  Bot, 
+  FileText, 
+  Calculator, 
+  MessageCircle, 
+  Clock, 
+  Brain, 
+  Shield, 
+  Settings,
+  ArrowRight,
+  CheckCircle,
+  XCircle,
+  Sparkles,
+  Globe,
+  Palette,
+  Zap,
+  MapPin
+} from "lucide-react";
 
 const Home = () => {
-  const expertiseDomains = [
-    {
-      icon: Sparkles,
-      title: "Luxe & Mode",
-      description: "Identités digitales élégantes et immersives pour maisons de prestige, bijouteries et marques horlogères.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Sport & Performance",
-      description: "Sites et applications pour marques sportives haut de gamme.",
-    },
-    {
-      icon: Palette,
-      title: "E-commerce Premium",
-      description: "Boutiques en ligne Shopify et Framer optimisées pour convertir sans sacrifier l'esthétique.",
-    },
-    {
-      icon: Award,
-      title: "Start-ups & IA",
-      description: "Landing pages et identités digitales pour start-ups technologiques et projets IA suisses.",
-    },
-  ];
-
-  const approachPillars = [
-    {
-      number: "01",
-      title: "Analyse & stratégie",
-      description: "Comprendre la marque, son audience et ses objectifs.",
-    },
-    {
-      number: "02",
-      title: "Design & émotion",
-      description: "Concevoir une identité digitale qui suscite la confiance et l'admiration.",
-    },
-    {
-      number: "03",
-      title: "Performance & pérennité",
-      description: "Livrer un site rapide, mesurable et durable dans le temps.",
-    },
-  ];
-
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>LX Studio – Agence web & SEO dans le Jura (Suisse romande)</title>
-        <meta name="description" content="LX Studio, agence digitale suisse basée à Bassecourt, experte en création de sites haut de gamme, SEO local et automatisations IA pour entreprises." />
-        <meta property="og:title" content="LX Studio – Agence web & SEO Jura Suisse" />
-        <meta property="og:description" content="Agence digitale suisse spécialisée en création de sites haut de gamme, SEO local et automatisations IA." />
+        <title>Agents IA & Automatisation Entreprise Suisse | LX Studio</title>
+        <meta name="description" content="LX Studio conçoit des agents IA pour automatiser devis, comptabilité et relation client. Solutions sur-mesure pour PME suisses. Audit gratuit." />
+        <meta property="og:title" content="Agents IA & Automatisation Entreprise Suisse | LX Studio" />
+        <meta property="og:description" content="Automatisez vos tâches répétitives avec des agents IA sur-mesure. Devis, comptabilité, chatbot – gagnez du temps pour votre business." />
+        <meta property="og:image" content="https://lxstudio.ch/og.jpg" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://lxstudio.ch" />
+        <meta name="keywords" content="agents IA entreprise suisse, automatisation entreprise suisse, agent IA devis, agent IA comptabilité, chatbot entreprise suisse, automatisation PME" />
       </Helmet>
       
-      {/* Hero Section */}
-      <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(11, 11, 11, 0.7), rgba(11, 11, 11, 0.8)), url(${heroBackground})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      {/* Hero Section - Agents IA */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <ParticlesBackground />
-        <div className="container mx-auto px-6 text-center z-10 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight animate-glow">
-            Agence web et digitale d'excellence
-            <span className="text-gradient-gold block mt-2">en Suisse romande</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            La précision suisse au service du design, de la performance et de l'émotion
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button asChild variant="hero" size="xl" className="hover-glow">
-              <Link to="/contact">
-                Demander un devis
-                <ArrowRight className="ml-2" />
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            background: "radial-gradient(ellipse at center, hsl(var(--gold) / 0.15) 0%, transparent 70%)",
+          }}
+        />
+        
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <div className="max-w-5xl mx-auto animate-slide-up">
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2 mb-8">
+              <Bot className="w-5 h-5 text-primary" />
+              <span className="text-primary text-sm font-medium">Intelligence Artificielle pour entreprises</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+              Agents IA & automatisation
+              <span className="block text-gradient-gold">pour entreprises suisses</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto leading-relaxed">
+              Devis, comptabilité et relation client automatisés.
+            </p>
+            <p className="text-lg text-muted-foreground mb-10 max-w-3xl mx-auto">
+              Moins de tâches manuelles. Plus de temps pour votre business.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/automatisations-ia">
+                <Button variant="hero" size="xl" className="group">
+                  <Bot className="w-5 h-5 mr-2" />
+                  Voir les agents IA
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
               </Link>
-            </Button>
-            <Button 
-              asChild 
-              variant="outline" 
-              size="xl"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('notre-approche')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="border-primary/50 hover:border-primary hover-glow"
-            >
-              <a href="#notre-approche">Notre approche</a>
-            </Button>
+              <Link to="/contact">
+                <Button variant="outline" size="xl" className="border-primary/50 hover:bg-primary/10">
+                  Audit gratuit de mon entreprise
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Notre Approche Section */}
-      <section id="notre-approche" className="py-24 bg-card relative overflow-hidden">
+      {/* Section Problèmes */}
+      <section className="py-24 bg-card relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16 animate-slide-up">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Vos équipes perdent du temps sur des{" "}
+              <span className="text-gradient-gold">tâches automatisables</span>
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                icon: FileText,
+                text: "Devis et factures faits manuellement"
+              },
+              {
+                icon: Clock,
+                text: "Relances clients oubliées"
+              },
+              {
+                icon: MessageCircle,
+                text: "Emails et demandes clients chronophages"
+              },
+              {
+                icon: XCircle,
+                text: "Erreurs humaines et perte de temps administratif"
+              }
+            ].map((problem, index) => (
+              <div
+                key={index}
+                className="bg-destructive/10 border border-destructive/30 rounded-xl p-6 text-center hover-lift"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <problem.icon className="w-10 h-10 text-destructive mx-auto mb-4" />
+                <p className="text-muted-foreground font-medium">{problem.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section Solutions : Agents IA */}
+      <section className="py-24 bg-background relative overflow-hidden">
         <div 
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2000')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundImage: "radial-gradient(circle at 30% 50%, hsl(var(--gold)) 0%, transparent 50%)",
           }}
         />
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-16 animate-slide-up">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Une approche fondée sur la précision et l'émotion
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Nous allions l'élégance du design suisse à une stratégie digitale mesurable.
-            </p>
-            <div className="text-left space-y-6 text-muted-foreground leading-relaxed">
-              <p>
-                Chez LX Studio, chaque projet naît d'une vision claire : créer des expériences digitales 
-                qui marquent par leur beauté, leur efficacité et leur sens.
-              </p>
-              <p className="font-semibold text-foreground">
-                Notre démarche s'articule autour de trois piliers :
-              </p>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {approachPillars.map((pillar, index) => (
-              <div
-                key={index}
-                className="bg-background/80 backdrop-blur-sm border border-border rounded-xl p-8 hover-lift"
-              >
-                <div className="text-5xl font-bold text-gradient-gold mb-4">
-                  {pillar.number}
-                </div>
-                <h3 className="text-2xl font-semibold text-foreground mb-3">
-                  {pillar.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {pillar.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="max-w-4xl mx-auto text-left space-y-6 text-muted-foreground leading-relaxed">
-            <p>
-              Nos processus sont rigoureux, nos outils de pointe, et notre exigence sans compromis.
-            </p>
-            <p className="text-xl font-semibold text-gradient-gold text-center">
-              🎯 Chaque pixel compte. Chaque interaction raconte une histoire.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Domaines d'Expertise Section */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
           <div className="text-center mb-16 animate-slide-up">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Nos domaines d'excellence
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2 mb-6">
+              <Sparkles className="w-5 h-5 text-primary" />
+              <span className="text-primary text-sm font-medium">Solutions IA sur-mesure</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Nos <span className="text-gradient-gold">agents IA</span> pour votre entreprise
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              LX Studio accompagne des marques exigeantes dans quatre univers où le design et la performance se rencontrent.
+              Des solutions intelligentes qui travaillent pour vous, 24h/24
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {expertiseDomains.map((domain, index) => (
-              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <ServiceCard {...domain} />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Agent Devis & Facturation */}
+            <div className="bg-card border border-border rounded-2xl p-8 hover-lift group relative overflow-hidden">
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: "radial-gradient(circle at 50% 0%, hsl(var(--gold) / 0.1) 0%, transparent 60%)",
+                }}
+              />
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <FileText className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  Agent IA Devis & Facturation
+                </h3>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">Génère devis et factures automatiquement</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">Envoie, relance et archive</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">Réduction des erreurs et gain de temps</span>
+                  </li>
+                </ul>
+                <Link to="/automatisations-ia">
+                  <Button variant="outline" className="w-full rounded-full border-primary/50 hover:bg-primary/10 group">
+                    Voir comment ça fonctionne
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </div>
-            ))}
+            </div>
+
+            {/* Agent Comptabilité */}
+            <div className="bg-card border border-border rounded-2xl p-8 hover-lift group relative overflow-hidden">
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: "radial-gradient(circle at 50% 0%, hsl(var(--gold) / 0.1) 0%, transparent 60%)",
+                }}
+              />
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Calculator className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  Agent IA Comptabilité & Suivi
+                </h3>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">Centralise les données financières</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">Prépare les exports comptables</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">Vision claire de la trésorerie</span>
+                  </li>
+                </ul>
+                <Link to="/automatisations-ia">
+                  <Button variant="outline" className="w-full rounded-full border-primary/50 hover:bg-primary/10 group">
+                    Voir comment ça fonctionne
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Agent Chatbot */}
+            <div className="bg-card border border-border rounded-2xl p-8 hover-lift group relative overflow-hidden">
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: "radial-gradient(circle at 50% 0%, hsl(var(--gold) / 0.1) 0%, transparent 60%)",
+                }}
+              />
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <MessageCircle className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  Agent IA Chatbot & Support
+                </h3>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">Répond aux clients 24/7</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">Qualifie les demandes entrantes</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">Améliore l'expérience client</span>
+                  </li>
+                </ul>
+                <Link to="/automatisations-ia">
+                  <Button variant="outline" className="w-full rounded-full border-primary/50 hover:bg-primary/10 group">
+                    Voir comment ça fonctionne
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Exclusif Section */}
-      <section className="py-24 bg-gradient-to-br from-card via-background to-card relative overflow-hidden">
-        <div 
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage: "radial-gradient(circle at 50% 50%, hsl(var(--gold)) 0%, transparent 50%)",
-          }}
-        />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block px-6 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
-              <span className="text-sm font-semibold text-primary">Bientôt disponible</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Nos réalisations arrivent bientôt
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              LX Studio prépare actuellement une sélection de projets sur mesure, conçus pour refléter 
-              l'alliance du design suisse et de la performance digitale.
-            </p>
-            <div className="bg-card/50 backdrop-blur-sm border border-border rounded-xl p-8 mb-8 text-left space-y-4">
-              <p className="text-muted-foreground leading-relaxed">
-                Nous collaborons avec des marques ambitieuses issues du luxe, du sport et de la technologie 
-                pour créer des expériences digitales d'exception.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Chaque projet que nous acceptons est traité comme une œuvre unique, pensée dans les moindres 
-                détails — du concept à l'exécution.
-              </p>
-              <div className="pt-4 space-y-2">
-                <p className="text-lg font-semibold text-foreground">
-                  🕰️ Les premières réalisations exclusives seront dévoilées prochainement.
-                </p>
-                <p className="text-lg font-semibold text-gradient-gold">
-                  💌 Vous souhaitez faire partie de cette première sélection ?
-                </p>
-              </div>
-            </div>
-            <Button asChild variant="hero" size="xl">
-              <Link to="/contact">
-                Réserver un appel découverte
-                <ArrowRight className="ml-2" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Zones d'intervention Section */}
+      {/* Section Bénéfices Business */}
       <section className="py-24 bg-card relative overflow-hidden">
         <div 
           className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: "radial-gradient(circle at 50% 50%, hsl(var(--gold)) 0%, transparent 50%)",
+            backgroundImage: "radial-gradient(circle at 70% 50%, hsl(var(--gold)) 0%, transparent 50%)",
           }}
         />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Nos zones d'intervention en Suisse romande
+              Pourquoi les entreprises passent aux{" "}
+              <span className="text-gradient-gold">agents IA</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
-              Basés à Bassecourt dans le Jura, nous accompagnons les entreprises de toute la Suisse romande
-            </p>
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
-              { name: "Delémont", icon: MapPin },
-              { name: "Porrentruy", icon: MapPin },
-              { name: "Bienne", icon: MapPin },
-              { name: "Neuchâtel", icon: MapPin },
-              { name: "Lausanne", icon: MapPin },
-            ].map((zone, index) => (
+              {
+                icon: Clock,
+                title: "Heures gagnées",
+                description: "Jusqu'à plusieurs heures gagnées par semaine"
+              },
+              {
+                icon: Brain,
+                title: "Moins de charge mentale",
+                description: "Libérez-vous des tâches répétitives"
+              },
+              {
+                icon: Shield,
+                title: "Processus fiables",
+                description: "Automatisations sans erreurs humaines"
+              },
+              {
+                icon: Settings,
+                title: "Sur-mesure",
+                description: "Solutions adaptées, sans changer vos outils"
+              }
+            ].map((benefit, index) => (
               <div
                 key={index}
-                className="bg-background/80 backdrop-blur-sm border border-border rounded-xl p-6 hover-lift text-center"
+                className="text-center hover-lift"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <zone.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                <p className="font-semibold text-foreground">{zone.name}</p>
+                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <benefit.icon className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-3">{benefit.title}</h3>
+                <p className="text-muted-foreground">{benefit.description}</p>
               </div>
             ))}
-          </div>
-
-          {/* Google Maps */}
-          <div className="max-w-4xl mx-auto rounded-xl overflow-hidden border border-border shadow-luxury">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21719.845844634547!2d7.227741!3d47.343583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4791e5e5e5e5e5e5%3A0x5e5e5e5e5e5e5e5!2sBassecourt%2C%20Switzerland!5e0!3m2!1sen!2sus!4v1234567890"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="LX Studio - Bassecourt, Jura, Suisse"
-            />
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-primary/10 to-secondary/10 relative overflow-hidden">
+      {/* Section Crédibilité */}
+      <section className="py-24 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center animate-slide-up">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+              Une approche <span className="text-gradient-gold">sur-mesure</span>, orientée résultats
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+              LX Studio conçoit des agents IA adaptés au fonctionnement réel des entreprises suisses. 
+              Chaque automatisation est pensée pour générer un retour sur investissement rapide.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2">
+                <CheckCircle className="w-5 h-5 text-primary" />
+                <span className="text-foreground">Expertise Suisse romande</span>
+              </div>
+              <div className="flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2">
+                <CheckCircle className="w-5 h-5 text-primary" />
+                <span className="text-foreground">Solutions personnalisées</span>
+              </div>
+              <div className="flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2">
+                <CheckCircle className="w-5 h-5 text-primary" />
+                <span className="text-foreground">Accompagnement dédié</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Services Secondaires */}
+      <section className="py-16 bg-card/50 relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12 animate-slide-up">
+            <h2 className="text-2xl md:text-3xl font-semibold text-muted-foreground mb-4">
+              Autres services digitaux
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {[
+              {
+                icon: Globe,
+                title: "Création de sites web",
+                description: "Sites vitrines et e-commerce haut de gamme"
+              },
+              {
+                icon: Palette,
+                title: "Branding & design",
+                description: "Identité visuelle et image de marque"
+              },
+              {
+                icon: Zap,
+                title: "Automatisations avancées",
+                description: "Workflows et intégrations sur-mesure"
+              }
+            ].map((service, index) => (
+              <div
+                key={index}
+                className="bg-background/50 border border-border/50 rounded-xl p-6 text-center"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <service.icon className="w-8 h-8 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
+                <p className="text-sm text-muted-foreground">{service.description}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-8">
+            <Link to="/services">
+              <Button variant="ghost" className="text-muted-foreground hover:text-primary">
+                Voir tous nos services
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Zones d'intervention */}
+      <section className="py-16 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-8 animate-slide-up">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <MapPin className="w-5 h-5 text-primary" />
+              <span className="text-primary font-medium">Zones d'intervention</span>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {["Delémont", "Porrentruy", "Bienne", "Neuchâtel", "Lausanne", "Genève"].map((city) => (
+                <span 
+                  key={city}
+                  className="bg-card border border-border rounded-full px-4 py-2 text-muted-foreground text-sm"
+                >
+                  {city}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Final */}
+      <section className="py-24 bg-card relative overflow-hidden">
         <div 
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0"
           style={{
-            background: "radial-gradient(circle at 30% 50%, hsl(var(--gold) / 0.2) 0%, transparent 50%), radial-gradient(circle at 70% 50%, hsl(var(--electric-blue) / 0.2) 0%, transparent 50%)",
+            background: "radial-gradient(ellipse at center, hsl(var(--gold) / 0.2) 0%, transparent 60%)",
           }}
         />
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Prêt à élever votre image digitale ?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Réservez un appel gratuit et découvrons ensemble votre potentiel.
-          </p>
-          <Button 
-            asChild 
-            variant="hero" 
-            size="xl"
-            className="hover:shadow-[0_0_40px_hsl(var(--gold)/0.5)] transition-all duration-300"
-          >
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <div className="max-w-3xl mx-auto animate-slide-up">
+            <Bot className="w-16 h-16 text-primary mx-auto mb-8" />
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Découvrez ce que l'IA peut automatiser dans votre entreprise
+            </h2>
+            <p className="text-xl text-muted-foreground mb-10">
+              Audit gratuit et personnalisé de vos processus
+            </p>
             <Link to="/contact">
-              Réserver un appel maintenant
-              <ArrowRight className="ml-2" />
+              <Button variant="hero" size="xl" className="group">
+                Demander un audit gratuit
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
             </Link>
-          </Button>
+          </div>
         </div>
       </section>
     </div>
