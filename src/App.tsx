@@ -8,6 +8,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import Home from "./pages/Home";
+import AgentsIAPage from "./pages/AgentsIA";
+import InfrastructurePage from "./pages/Infrastructure";
 import Services from "./pages/Services";
 import AutomationsIA from "./pages/AutomationsIA";
 import SeoGeo from "./pages/SeoGeo";
@@ -67,6 +69,8 @@ const App = () => (
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/agents-ia" element={<AgentsIAPage />} />
+              <Route path="/infrastructure" element={<InfrastructurePage />} />
               <Route path="/services" element={<Services />} />
               <Route path="/automatisations-ia" element={<AutomationsIA />} />
               <Route path="/automatisations-ia/assistant-administratif" element={<AssistantAdministratif />} />

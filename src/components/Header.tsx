@@ -10,10 +10,8 @@ const Header = () => {
 
   const navItems = [
     { label: "Accueil", path: "/" },
-    { label: "Services", path: "/services" },
-    { label: "Automatisations IA", path: "/automatisations-ia" },
-    { label: "SEO & GEO-SEO", path: "/seo-geo" },
-    { label: "Portfolio", path: "/portfolio" },
+    { label: "Agents IA", path: "/agents-ia" },
+    { label: "Infrastructure", path: "/infrastructure" },
     { label: "Blog", path: "/blog" },
     { label: "Contact", path: "/contact" },
   ];
@@ -21,11 +19,11 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-lg shadow-black/5">
-      <nav className="container mx-auto px-6 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/30">
+      <nav className="container mx-auto px-4 md:px-6 py-3 md:py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center group">
-            <img src={logoText} alt="LX Studio" className="h-10 w-auto transition-all duration-300 group-hover:scale-105 hover-glow" />
+            <img src={logoText} alt="LX Studio" className="h-8 md:h-10 w-auto transition-all duration-300 group-hover:scale-105 hover-glow" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -42,7 +40,7 @@ const Header = () => {
               </Link>
             ))}
             <Button asChild variant="hero" size="default">
-              <Link to="/contact">Demander un devis</Link>
+              <Link to="/contact">Réserver un appel</Link>
             </Button>
           </div>
 
@@ -58,24 +56,26 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4 animate-fade-in">
+          <div className="md:hidden mt-3 pb-4 space-y-1 animate-fade-in border-t border-border/20 pt-3">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(item.path) ? "text-primary" : "text-muted-foreground"
+                className={`block text-sm font-medium transition-colors hover:text-primary py-2.5 px-2 rounded-lg hover:bg-primary/5 ${
+                  isActive(item.path) ? "text-primary bg-primary/5" : "text-muted-foreground"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
-            <Button asChild variant="hero" size="default" className="w-full">
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                Demander un devis
-              </Link>
-            </Button>
+            <div className="pt-2">
+              <Button asChild variant="hero" size="default" className="w-full">
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  Réserver un appel
+                </Link>
+              </Button>
+            </div>
           </div>
         )}
       </nav>
