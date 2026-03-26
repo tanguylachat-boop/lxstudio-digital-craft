@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import Link from "@/components/Link";
+import { imgSrc } from "@/lib/image";
 import { Instagram, Linkedin, Music } from "lucide-react";
 import logoText from "@/assets/logo-text.png";
 
@@ -21,7 +22,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="mb-4 group">
-              <img src={logoText} alt="LX Studio" className="h-12 w-auto transition-all duration-300 group-hover:scale-105 hover-glow" />
+              <img src={imgSrc(logoText)} alt="LX Studio" className="h-12 w-auto transition-all duration-300 group-hover:scale-105 hover-glow" />
             </div>
             <p className="text-sm text-gradient-gold font-semibold mb-4">
               L'agence IA pour les PME suisses

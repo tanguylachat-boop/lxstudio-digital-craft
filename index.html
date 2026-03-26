@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <!-- Meta essentielles -->
     <meta charset="UTF-8" />
@@ -40,24 +40,53 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "ProfessionalService",
+      "@id": "https://www.lxstudio.ch/#organization",
       "name": "LX Studio",
       "url": "https://www.lxstudio.ch",
-      "logo": "https://www.lxstudio.ch/logo.png",
+      "logo": "https://www.lxstudio.ch/logo-emblem.png",
+      "image": "https://www.lxstudio.ch/logo-emblem.png",
       "telephone": "+41787038800",
       "email": "contact@lxstudio.ch",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Bassecourt",
+        "postalCode": "2854",
         "addressRegion": "Jura",
         "addressCountry": "CH"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.34358,
+        "longitude": 7.22774
+      },
       "areaServed": ["Suisse romande","Jura","Delémont","Bienne","Bâle","Lausanne","Genève"],
       "description": "Agence web & IA suisse : sites vitrines premium, SEO & GEO-SEO, agents IA (automatisations marketing, administratif, réception téléphonique, RDV).",
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
       "sameAs": [
         "https://www.instagram.com/lxstudio.ch",
-        "https://www.linkedin.com/company/lxstudio"
+        "https://www.linkedin.com/company/lxstudio",
+        "https://tiktok.com/@lxstudio"
       ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.lxstudio.ch/#website",
+      "name": "LX Studio",
+      "url": "https://www.lxstudio.ch",
+      "description": "Agence web & IA suisse : agents IA, automatisations, SEO & GEO-SEO, sites vitrines premium pour PME suisses.",
+      "publisher": { "@id": "https://www.lxstudio.ch/#organization" },
+      "inLanguage": "fr-CH"
     }
     </script>
     
@@ -65,70 +94,61 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "name": "Automatisations IA (Agents IA)",
       "serviceType": "Automatisations IA (Agents IA)",
-      "provider": {
-        "@type": "Organization",
-        "name": "LX Studio",
-        "url": "https://www.lxstudio.ch"
-      },
+      "url": "https://www.lxstudio.ch/automatisations-ia",
+      "provider": { "@id": "https://www.lxstudio.ch/#organization" },
       "areaServed": ["Suisse romande","Jura","Delémont","Bienne","Bâle","Lausanne","Genève"],
       "offers": {
         "@type": "Offer",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "CHF",
+        "price": "490"
       },
       "description": "Agents IA sur mesure pour accueil, qualification, RDV, relances et back-office. Intégrations Stripe, n8n, Supabase, Calendars, WhatsApp."
     }
     </script>
-    
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "name": "SEO & GEO-SEO",
       "serviceType": "SEO & GEO-SEO",
-      "provider": {
-        "@type": "Organization",
-        "name": "LX Studio",
-        "url": "https://www.lxstudio.ch"
-      },
+      "url": "https://www.lxstudio.ch/seo-geo",
+      "provider": { "@id": "https://www.lxstudio.ch/#organization" },
       "areaServed": ["Suisse romande","Jura","Delémont","Bienne","Bâle","Lausanne","Genève"],
       "offers": {
         "@type": "Offer",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "CHF"
       },
       "description": "SEO technique, contenus et pages locales, optimisation Google Business Profile, reporting mensuel."
     }
     </script>
-    
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "name": "Site vitrine premium",
       "serviceType": "Site vitrine premium",
-      "provider": {
-        "@type": "Organization",
-        "name": "LX Studio",
-        "url": "https://www.lxstudio.ch"
-      },
+      "url": "https://www.lxstudio.ch/services",
+      "provider": { "@id": "https://www.lxstudio.ch/#organization" },
       "areaServed": ["Suisse romande","Jura","Delémont","Bienne","Bâle","Lausanne","Genève"],
       "offers": {
         "@type": "Offer",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "CHF",
+        "price": "2490"
       },
       "description": "Sites vitrines haut de gamme, UX mobile-first, SEO prêt, intégrations essentielles, performance et sécurité."
     }
     </script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Self-hosted font preloads (critical fonts only) -->
+    <link rel="preload" href="/fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin />
 </head>
 
   <body>

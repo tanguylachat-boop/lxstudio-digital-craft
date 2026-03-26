@@ -1,0 +1,124 @@
+---
+import '@/index.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: string;
+  schema?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogTitle,
+  ogDescription,
+  ogImage = 'https://storage.googleapis.com/gpt-engineer-file-uploads/LhVHjfruSMNcfnG6QjiAPUan0TB3/social-images/social-1761240186387-lx studio.PNG',
+  ogType = 'website',
+  schema,
+} = Astro.props;
+
+const currentPath = new URL(Astro.request.url).pathname;
+const siteUrl = 'https://www.lxstudio.ch';
+const canonicalUrl = canonical || `${siteUrl}${currentPath === '/' ? '' : currentPath}`;
+const resolvedOgTitle = ogTitle || title;
+const resolvedOgDescription = ogDescription || description;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="WRBXz51pZt9ueldIVTrjCPfeOfGDvQ90noMDLq8qKX8" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="LX Studio" />
+    <meta name="language" content="fr-CH" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={resolvedOgTitle} />
+    <meta property="og:description" content={resolvedOgDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="fr_CH" />
+    <meta property="og:site_name" content="LX Studio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={resolvedOgTitle} />
+    <meta name="twitter:description" content={resolvedOgDescription} />
+    <meta property="twitter:image" content={ogImage} />
+    <meta name="twitter:site" content="@lxstudio" />
+
+    <!-- Global JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#organization`,
+      "name": "LX Studio",
+      "url": siteUrl,
+      "logo": `${siteUrl}/logo-emblem.png`,
+      "image": `${siteUrl}/logo-emblem.png`,
+      "telephone": "+41787038800",
+      "email": "contact@lxstudio.ch",
+      "address": { "@type": "PostalAddress", "addressLocality": "Bassecourt", "postalCode": "2854", "addressRegion": "Jura", "addressCountry": "CH" },
+      "geo": { "@type": "GeoCoordinates", "latitude": 47.34358, "longitude": 7.22774 },
+      "areaServed": ["Suisse romande","Jura","Delémont","Bienne","Bâle","Lausanne","Genève"],
+      "description": "Agence web & IA suisse : sites vitrines premium, SEO & GEO-SEO, agents IA.",
+      "priceRange": "$$",
+      "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+      "sameAs": ["https://www.instagram.com/lxstudio.ch","https://www.linkedin.com/company/lxstudio","https://tiktok.com/@lxstudio"]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "name": "LX Studio",
+      "url": siteUrl,
+      "description": "Agence web & IA suisse : agents IA, automatisations, SEO & GEO-SEO, sites vitrines premium pour PME suisses.",
+      "publisher": { "@id": `${siteUrl}/#organization` },
+      "inLanguage": "fr-CH"
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": siteUrl }
+      ].concat(currentPath !== '/' ? [{ "@type": "ListItem", "position": 2, "name": title.split(' — ')[0].split(' | ')[0], "item": canonicalUrl }] : [])
+    })} />
+
+    {schema && <script type="application/ld+json" set:html={schema} />}
+
+    <!-- Font preloads -->
+    <link rel="preload" href="/fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+
+  <body class="bg-background text-foreground antialiased" style="font-family: 'Satoshi', system-ui, -apple-system, sans-serif;">
+    <div class="flex flex-col min-h-screen">
+      <Header client:load currentPath={currentPath} />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <Footer client:load />
+      <WhatsAppButton client:load />
+    </div>
+  </body>
+</html>

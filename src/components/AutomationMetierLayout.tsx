@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Link } from "react-router-dom";
+import Link from "@/components/Link";
+import { imgSrc } from "@/lib/image";
 import { LucideIcon } from "lucide-react";
 
 interface Agent {
@@ -51,7 +52,7 @@ const AutomationMetierLayout = ({
             {intro}
           </p>
           <img
-            src={heroImage}
+            src={imgSrc(heroImage)}
             alt={`Automatisation IA pour ${metier}`}
             className="w-full h-[400px] object-cover rounded-2xl shadow-card"
             loading="lazy"
@@ -156,7 +157,7 @@ const AutomationMetierLayout = ({
             </div>
           </div>
           <img
-            src={transformImage}
+            src={imgSrc(transformImage)}
             alt="Transformation digitale"
             className="w-full h-[400px] object-cover rounded-2xl shadow-card"
             loading="lazy"

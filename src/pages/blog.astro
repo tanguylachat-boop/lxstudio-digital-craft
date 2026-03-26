@@ -1,0 +1,11 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Blog from '@/views/Blog.tsx';
+---
+
+<Layout
+  title="Blog — Conseils SEO, IA & digital pour PME suisses — LX Studio"
+  description="Articles et guides sur le SEO local, les automatisations IA et le marketing digital pour les PME en Suisse romande."
+>
+  <Blog client:load />
+</Layout>

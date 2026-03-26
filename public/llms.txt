@@ -1,0 +1,37 @@
+# LX Studio
+
+> Agence web & IA suisse basee a Bassecourt (Jura). Sites vitrines premium, agents IA et automatisations, SEO & GEO-SEO pour PME suisses.
+
+## Services
+
+- **Agents IA & Automatisations**: Agents IA sur mesure pour accueil telephonique, qualification de leads, prise de RDV, relances automatiques et back-office. Integrations Stripe, n8n, Supabase, Calendars, WhatsApp. A partir de 490 CHF/mois.
+- **SEO & GEO-SEO**: SEO technique, contenus optimises, pages locales, optimisation Google Business Profile, reporting mensuel.
+- **Sites vitrines premium**: Sites web haut de gamme, UX mobile-first, SEO-ready, integrations essentielles, performance et securite. A partir de 2490 CHF.
+
+## Secteurs d'activite (automatisations IA)
+
+Restaurant, immobilier, cabinet medical, cabinet avocat, coach sportif, e-commerce, agence marketing, comptable, garage automobile, salon de beaute, artisan, centre de formation, agence de nettoyage, transport, startup, industrie, ressources humaines, evenementiel, administration, assistant administratif.
+
+## Zone de service
+
+Suisse romande: Jura, Delemont, Bienne, Bale, Lausanne, Geneve. Base a Bassecourt (2854), Suisse.
+
+## Contact
+
+- Site: https://www.lxstudio.ch
+- Email: contact@lxstudio.ch
+- Telephone: +41 78 703 88 00
+- Instagram: https://www.instagram.com/lxstudio.ch
+- LinkedIn: https://www.linkedin.com/company/lxstudio
+
+## Pages principales
+
+- Accueil: https://www.lxstudio.ch/
+- Services: https://www.lxstudio.ch/services
+- Agents IA: https://www.lxstudio.ch/agents-ia
+- Automatisations IA: https://www.lxstudio.ch/automatisations-ia
+- SEO & GEO-SEO: https://www.lxstudio.ch/seo-geo
+- Portfolio: https://www.lxstudio.ch/portfolio
+- A propos: https://www.lxstudio.ch/about
+- Blog: https://www.lxstudio.ch/blog
+- Contact: https://www.lxstudio.ch/contact

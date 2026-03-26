@@ -1,0 +1,13 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Home from '@/views/Home.tsx';
+---
+
+<Layout
+  title="LX Studio — Agents IA & Infrastructure digitale pour PME suisses"
+  description="L'agence IA n°1 pour les PME suisses. Agents IA, automatisations et dashboards sur mesure. Résultats en 5 jours. Dès 490 CHF."
+  ogTitle="LX Studio — Agents IA pour PME suisses"
+  ogDescription="Automatisez votre business avec des agents IA sur mesure. Email, facturation, chatbot, réseaux sociaux — résultats en 5 jours."
+>
+  <Home client:load />
+</Layout>

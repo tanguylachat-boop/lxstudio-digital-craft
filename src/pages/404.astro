@@ -1,0 +1,11 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import NotFound from '@/views/NotFound.tsx';
+---
+
+<Layout
+  title="Page non trouvée — LX Studio"
+  description="La page que vous cherchez n'existe pas ou a été déplacée."
+>
+  <NotFound client:load />
+</Layout>
